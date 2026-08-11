@@ -87,6 +87,14 @@ gh api repos/OWNER/REPO/contents/Cargo.toml -q .name 2>/dev/null     # rust → 
 
 No signal → propose the generic CI (or ask the user whether CI is wanted at all).
 
+### 5. Ask about language (before planning)
+
+- Ask the user which language `CONTRIBUTING.md` and the PR template should be
+  written in (default: English, or the project's primary language for local
+  projects). Translate the templates accordingly when generating — never
+  assume a language.
+- (README languages are asked separately in Module F.)
+
 ## Workflow
 
 1. **Preflight** (above). If auth or access fails, stop with a clear message.
@@ -196,6 +204,8 @@ cp templates/PR_TEMPLATE.md .github/PULL_REQUEST_TEMPLATE.md
 git add .github/PULL_REQUEST_TEMPLATE.md && git commit -m "chore: add PR template" && git push
 ```
 
+- Write the template in the user-chosen language (Preflight step 5).
+
 ### Module D — CI workflow
 
 Pick the workflow from the framework detection (templates/ci-*.yml). Write to
@@ -268,7 +278,8 @@ README (ask about languages FIRST):
   (badges, install, usage, modules table). Keep the user's existing content if
   it is already substantive — only append a badges block.
 - `CONTRIBUTING.md`, `SECURITY.md`, `CODE_OF_CONDUCT.md`: copy from
-  templates if missing.
+  templates if missing (write `CONTRIBUTING.md` in the user-chosen language
+  from Preflight step 5).
 - `VISION.md`: optional direction doc (modeled on OpenClaw's VISION.md) —
   generate a short vision from `templates/VISION.md` (origin, guiding
   principles, current state, direction, contribution rules) if the user

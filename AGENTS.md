@@ -25,6 +25,11 @@ Cursor, Copilot, OpenClaw, etc.) working in this repository.
   builds `repo-standardizer-vX.Y.Z.zip` and publishes the Release. Verify the
   zip's `SKILL.md` + `templates/` after each release.
 - Commit style: `type(scope): description` (see CONTRIBUTING.md).
+- **Language: all commit messages, PR titles/bodies, and repo communication
+  are in English.**
+- **Changelog**: `CHANGELOG.md` is maintained by hand (Keep a Changelog) —
+  add an entry for every release; the release workflow renders that entry
+  into the Release body automatically.
 - i18n: README is bilingual — `README.md` (English, default) +
   `README.zh.md` (简体中文). Keep both parallel, incl. the switcher line.
 

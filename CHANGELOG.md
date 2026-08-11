@@ -5,6 +5,25 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), versions follo
 
 ## [Unreleased]
 
+## [v0.1.8] - 2026-08-11
+
+### Changed
+
+- Release workflow: Release body now rendered from the `CHANGELOG.md` entry
+  for the tag (modeled on OpenClaw official) instead of auto-generated notes
+- SKILL.md: language preference asked up front (Preflight step 5) —
+  `CONTRIBUTING.md` and PR template are written in the user-chosen language
+- AGENTS.md: all commit messages, PR titles/bodies, and repo communication
+  are in English
+
+## [v0.1.7] - 2026-08-11
+
+### Added
+
+- `VISION.md`, `THIRD_PARTY_NOTICES.md`, `docs/ARCHITECTURE.md`
+- SKILL.md Module F: VISION / THIRD_PARTY_NOTICES / ARCHITECTURE / CHANGELOG generation
+- Templates: `VISION.md`, `CHANGELOG.md`
+
 ## [v0.1.6] - 2026-08-11
 
 ### Added

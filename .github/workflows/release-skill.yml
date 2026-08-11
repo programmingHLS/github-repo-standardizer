@@ -26,8 +26,25 @@ jobs:
           ls -la
           unzip -l "repo-standardizer-${TAG}.zip" | head -25
 
+      - name: Extract changelog entry for release body
+        id: changelog
+        env:
+          TAG: ${{ github.ref_name }}
+        run: |
+          python3 - "$TAG" <<'PYEOF' > /tmp/release-body.md
+          import re, sys
+          tag = sys.argv[1]
+          try:
+              text = open('CHANGELOG.md', encoding='utf-8').read()
+          except FileNotFoundError:
+              print(''); sys.exit(0)
+          m = re.search(r'^## \[' + re.escape(tag) + r'\](.*?)(?=^## |\Z)', text, re.M | re.S)
+          print(m.group(1).strip() if m else '')
+          PYEOF
+          echo "body bytes: $(wc -c < /tmp/release-body.md)"
+
       - name: Create GitHub Release with asset
         uses: softprops/action-gh-release@v2
         with:
           files: dist/repo-standardizer-*.zip
-          generate_release_notes: true
+          body_path: /tmp/release-body.md
