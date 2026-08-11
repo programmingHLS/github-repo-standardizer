@@ -96,15 +96,20 @@ No signal → propose the generic CI (or ask the user whether CI is wanted at al
 
 ### Module A — Labels (idempotent upsert)
 
-GitHub's REST `PUT /repos/{owner}/{repo}/labels/{name}` creates or updates.
-Loop over `templates/labels.json`:
+GitHub has **no** `PUT /labels/{name}` endpoint. Upsert = check existence
+(`GET /labels/{name}`), then `POST /labels` (create) or `PATCH /labels/{name}`
+(update). Works for both map-form and array-form `labels.json`:
 
 ```bash
-jq -c '.[]' templates/labels.json | while read -r l; do
-  name=$(echo "$l" | jq -r .name)
-  gh api -X PUT "repos/OWNER/REPO/labels/$(python3 -c "import urllib.parse,sys;print(urllib.parse.quote(sys.argv[1]))" "$name")" \
-    -f name="$name" -f color="$(echo "$l" | jq -r .color)" -f description="$(echo "$l" | jq -r .description)" \
-    --silent && echo "label ok: $name" || echo "label FAILED: $name"
+R="repos/OWNER/REPO"
+jq -c 'if type == "array" then .[] else to_entries[] | {name: .key} + .value end' templates/labels.json | while read -r l; do
+  name=$(echo "$l" | jq -r .name); color=$(echo "$l" | jq -r .color); desc=$(echo "$l" | jq -r .description)
+  enc=$(python3 -c "import urllib.parse,sys;print(urllib.parse.quote(sys.argv[1]))" "$name")
+  if gh api "$R/labels/$enc" >/dev/null 2>&1; then
+    gh api -X PATCH "$R/labels/$enc" -f name="$name" -f color="$color" -f description="$desc" --silent && echo "label updated: $name"
+  else
+    gh api -X POST "$R/labels" -f name="$name" -f color="$color" -f description="$desc" --silent && echo "label created: $name"
+  fi
 done
 ```
 
