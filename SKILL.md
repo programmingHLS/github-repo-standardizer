@@ -250,6 +250,20 @@ EOF
 
 ### Module F — Docs
 
+README (ask about languages FIRST):
+
+- Ask the user: which languages should the README support? (suggest the
+  project's primary language + English for international projects)
+- If a README already exists, ask whether to adapt it into more languages —
+  never add languages without asking.
+- Language switcher convention (pattern from `programmingHLS/ccmm`):
+  - Default file stays `README.md` (usually English).
+  - Extra languages: `README.<lang>.md` (e.g. `README.zh.md`, `README.ja.md`).
+  - Top of every file, a switcher line — current language as plain text,
+    others as relative links:
+    - `README.md`:       `< English | [简体中文](./README.zh.md) >`
+    - `README.zh.md`:    `< [English](./README.md) | 简体中文 >`
+  - Keep structure, badges, and anchors parallel across language files.
 - `README.md`: if missing or bare, generate one from `templates/README.md`
   (badges, install, usage, modules table). Keep the user's existing content if
   it is already substantive — only append a badges block.
@@ -257,6 +271,22 @@ EOF
   templates if missing.
 - `LICENSE`: ask the user which license (default MIT) before creating.
 - `CHANGELOG.md`: create with `# Changelog` header only if missing.
+
+### Module G — AI assistant guides (CLAUDE.md / AGENTS.md)
+
+- Add a `CLAUDE.md` (guidance for Claude Code) and an `AGENTS.md` (guidance
+  for any AI coding agent) when missing — see `templates/CLAUDE.md` and
+  `templates/AGENTS.md`.
+- If they already exist, diff and fill gaps rather than overwrite.
+- Typical content, derived from the repo audit (Modules A–F):
+  - Project: one-paragraph summary, status, stack.
+  - Commands: build / test / lint / run (from CI detection + package scripts).
+  - Conventions: commit style (see CONTRIBUTING), label taxonomy, i18n
+    requirements, secrets policy (never hardcode keys), file map.
+  - Caveats: known risks, areas to be careful with.
+- CLAUDE.md vs AGENTS.md: CLAUDE.md is Claude-specific; AGENTS.md is
+  agent-agnostic (works for Cursor/Copilot/OpenClaw too). Keep AGENTS.md free
+  of Claude-only references.
 
 ## Verification
 
@@ -284,4 +314,5 @@ All templates live in `templates/`:
 `labels.json`, `LABELS.md`, `config.yml`, `issue-form-bug.yml`,
 `issue-form-feature.yml`, `issue-form-question.yml`, `PR_TEMPLATE.md`,
 `ci-node.yml`, `ci-python.yml`, `ci-go.yml`, `ci-rust.yml`, `CODEOWNERS`,
-`CONTRIBUTING.md`, `SECURITY.md`, `CODE_OF_CONDUCT.md`, `README.md`.
+`CONTRIBUTING.md`, `SECURITY.md`, `CODE_OF_CONDUCT.md`, `CLAUDE.md`,
+`AGENTS.md`, `README.md`, `README.zh.md`.
