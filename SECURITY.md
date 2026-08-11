@@ -6,7 +6,7 @@ Please **do not** open a public issue for security vulnerabilities.
 
 Report privately instead:
 
-- Open a [private security advisory](https://github.com/programmingHLS/github-repo-standardizer/security/advisories/new), or
+- Open a [private security advisory](https://github.com/programmingHLS/repo-standardizer/security/advisories/new), or
 - Email the maintainers (see repository profile for contact).
 
 You should receive a response within 7 days. Please include:

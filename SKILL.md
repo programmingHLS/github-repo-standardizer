@@ -1,5 +1,5 @@
 ---
-name: github-repo-standardizer
+name: repo-standardizer
 description: Standardize a GitHub repository end-to-end — issue forms, PR template, label taxonomy, CI workflows, CODEOWNERS, rulesets, and docs. Use when creating a new repository or professionalizing an existing one.
 metadata:
   openclaw:

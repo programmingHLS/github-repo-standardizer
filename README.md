@@ -1,12 +1,12 @@
 # 🦞 GitHub Repo Standardizer
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![GitHub release](https://img.shields.io/github/v/release/programmingHLS/github-repo-standardizer)](https://github.com/programmingHLS/github-repo-standardizer/releases)
-[![GitHub issues](https://img.shields.io/github/issues/programmingHLS/github-repo-standardizer)](https://github.com/programmingHLS/github-repo-standardizer/issues)
-[![GitHub pull requests](https://img.shields.io/github/issues-pr/programmingHLS/github-repo-standardizer)](https://github.com/programmingHLS/github-repo-standardizer/pulls)
-[![GitHub stars](https://img.shields.io/github/stars/programmingHLS/github-repo-standardizer)](https://github.com/programmingHLS/github-repo-standardizer/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/programmingHLS/github-repo-standardizer)](https://github.com/programmingHLS/github-repo-standardizer/network)
-[![GitHub contributors](https://img.shields.io/github/contributors/programmingHLS/github-repo-standardizer)](https://github.com/programmingHLS/github-repo-standardizer/graphs/contributors)
+[![GitHub release](https://img.shields.io/github/v/release/programmingHLS/repo-standardizer)](https://github.com/programmingHLS/repo-standardizer/releases)
+[![GitHub issues](https://img.shields.io/github/issues/programmingHLS/repo-standardizer)](https://github.com/programmingHLS/repo-standardizer/issues)
+[![GitHub pull requests](https://img.shields.io/github/issues-pr/programmingHLS/repo-standardizer)](https://github.com/programmingHLS/repo-standardizer/pulls)
+[![GitHub stars](https://img.shields.io/github/stars/programmingHLS/repo-standardizer)](https://github.com/programmingHLS/repo-standardizer/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/programmingHLS/repo-standardizer)](https://github.com/programmingHLS/repo-standardizer/network)
+[![GitHub contributors](https://img.shields.io/github/contributors/programmingHLS/repo-standardizer)](https://github.com/programmingHLS/repo-standardizer/graphs/contributors)
 
 > **An OpenClaw skill that turns any bare GitHub repository into a professional one — issue forms, PR template, label taxonomy, CI, rulesets, and docs — with one command.**
 
@@ -37,10 +37,10 @@ Stop pasting the same wall of prompts every time you start a new project. This s
 
 ```bash
 # via OpenClaw
-openclaw skills install git:programmingHLS/github-repo-standardizer@main
+openclaw skills install git:programmingHLS/repo-standardizer@main
 
 # or via the skills CLI
-npx skills add programmingHLS/github-repo-standardizer
+npx skills add programmingHLS/repo-standardizer
 ```
 
 Requires: `gh` CLI (authenticated), `git`, and `jq` + `python3` for label encoding.
@@ -50,7 +50,7 @@ Requires: `gh` CLI (authenticated), `git`, and `jq` + `python3` for label encodi
 Just ask your agent:
 
 ```text
-Standardize the repo programmingHLS/github-repo-standardizer
+Standardize the repo programmingHLS/repo-standardizer
 ```
 
 Or run modules selectively:
@@ -94,7 +94,7 @@ Protect the main branch with a ruleset requiring review
 ## 🤝 Contributing
 
 PRs welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for conventions.
-Found a bug? Use the [bug report form](https://github.com/programmingHLS/github-repo-standardizer/issues/new?template=bug.yml).
+Found a bug? Use the [bug report form](https://github.com/programmingHLS/repo-standardizer/issues/new?template=bug.yml).
 
 ## 📄 License
 
