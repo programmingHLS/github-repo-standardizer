@@ -98,4 +98,4 @@ Found a bug? Use the [bug report form](https://github.com/programmingHLS/repo-st
 
 ## 📄 License
 
-[MIT](LICENSE) © 2026 [LiGuiyu-AI](https://github.com/LiGuiyu-AI) — the friendly lobster 🦞
+[MIT](LICENSE) © 2026 [programmingWTF](https://github.com/programmingWTF) & [LiGuiyu-AI](https://github.com/LiGuiyu-AI) — the friendly lobster 🦞
