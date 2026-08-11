@@ -175,8 +175,14 @@ gh api -X POST repos/OWNER/REPO/rulesets --input - <<'EOF'
 EOF
 ```
 
-- Idempotency: if a ruleset with the same name exists, `PATCH
-  repos/OWNER/REPO/rulesets/{id}` instead of creating a duplicate.
+- Idempotency: if a ruleset with the same name exists, update it with
+  `PUT repos/OWNER/REPO/rulesets/{id}` — **full replace**, include the complete
+  body (name, enforcement, conditions, rules, bypass_actors). There is no PATCH
+  for rulesets (PATCH returns 404).
+- Optional admin bypass: add `"bypass_actors": [{"actor_id": 5,
+  "actor_type": "RepositoryRole", "bypass_mode": "always"}]` (id 5 = admin)
+  so maintainers can push directly to the protected branch; non-admins still
+  go through pull requests.
 - `pull_request` parameters are **all required** in current API versions:
   `required_approving_review_count`, `dismiss_stale_reviews_on_push`,
   `require_code_owner_review`, `require_last_push_approval`,
