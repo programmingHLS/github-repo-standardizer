@@ -5,7 +5,7 @@ to a target repository.
 
 ## The product
 
-`SKILL.md` is an OpenClaw skill: a set of instructions the agent follows to
+`SKILL.md` is a skill: a set of instructions the agent follows to
 standardize a GitHub repository. `templates/` are the concrete artifacts it
 places into (or adapts for) the target repo.
 

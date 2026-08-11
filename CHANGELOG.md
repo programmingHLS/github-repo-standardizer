@@ -5,6 +5,16 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), versions follo
 
 ## [Unreleased]
 
+## [v0.2.0] - 2026-08-11
+
+### Changed
+
+- Repositioned as an agent-agnostic skill (not OpenClaw-specific): works with
+  any skills-enabled agent — Claude Code, Cursor, Copilot, OpenClaw, etc.
+- README (en/zh): tagline now reads "A skill…" + agent-agnostic note;
+  install section leads with the generic `npx skills add` path
+- AGENTS.md / docs/ARCHITECTURE.md: dropped the "OpenClaw skill" self-description
+
 ## [v0.1.9] - 2026-08-11
 
 ### Fixed

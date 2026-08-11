@@ -10,7 +10,9 @@
 [![GitHub forks](https://img.shields.io/github/forks/programmingHLS/repo-standardizer)](https://github.com/programmingHLS/repo-standardizer/network)
 [![GitHub contributors](https://img.shields.io/github/contributors/programmingHLS/repo-standardizer)](https://github.com/programmingHLS/repo-standardizer/graphs/contributors)
 
-> **An OpenClaw skill that turns any bare GitHub repository into a professional one — issue forms, PR template, label taxonomy, CI, rulesets, and docs — with one command.**
+> **A skill that turns any bare GitHub repository into a professional one — issue forms, PR template, label taxonomy, CI, rulesets, and docs — with one command.**
+>
+> **Agent-agnostic**: works with any skills-enabled agent — Claude Code, Cursor, Copilot, OpenClaw, and more.
 
 Stop pasting the same wall of prompts every time you start a new project. This skill detects the current state of a repository and applies a professional baseline **idempotently**: run it on a fresh repo, or run it on an old repo to fill in what's missing. It never clobbers your content.
 
@@ -38,11 +40,11 @@ Stop pasting the same wall of prompts every time you start a new project. This s
 ## 📦 Installation
 
 ```bash
-# via OpenClaw
-openclaw skills install git:programmingHLS/repo-standardizer@main
-
-# or via the skills CLI
+# via the skills CLI (works with any agent)
 npx skills add programmingHLS/repo-standardizer
+
+# or via OpenClaw
+openclaw skills install git:programmingHLS/repo-standardizer@main
 ```
 
 Requires: `gh` CLI (authenticated), `git`, and `jq` + `python3` for label encoding.

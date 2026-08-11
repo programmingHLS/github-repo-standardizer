@@ -7,7 +7,7 @@ Cursor, Copilot, OpenClaw, etc.) working in this repository.
 
 - Repo: `https://github.com/programmingHLS/repo-standardizer`
 - Replies: repo-root refs only: `SKILL.md:120`. No absolute paths, no `~/`.
-- This repo is an **OpenClaw skill**: `SKILL.md` is the product, `templates/`
+- This repo is a **skill**: `SKILL.md` is the product, `templates/`
   are its support files, `.github/workflows/release-skill.yml` ships it.
   There is no application code — don't invent build/test steps.
 - Read `README.md` (or `README.zh.md`) and `CONTRIBUTING.md` first.

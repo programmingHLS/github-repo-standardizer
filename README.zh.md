@@ -10,7 +10,9 @@
 [![GitHub forks](https://img.shields.io/github/forks/programmingHLS/repo-standardizer)](https://github.com/programmingHLS/repo-standardizer/network)
 [![GitHub contributors](https://img.shields.io/github/contributors/programmingHLS/repo-standardizer)](https://github.com/programmingHLS/repo-standardizer/graphs/contributors)
 
-> **一个 OpenClaw Skill，一键把任何裸奔的 GitHub 仓库变成专业仓库——issue 表单、PR 模板、标签体系、CI、规则集、文档，一条命令搞定。**
+> **一个 Skill，一键把任何裸奔的 GitHub 仓库变成专业仓库——issue 表单、PR 模板、标签体系、CI、规则集、文档，一条命令搞定。**
+>
+> **与 Agent 无关**：任何支持 skills 的 agent 都能用——Claude Code、Cursor、Copilot、OpenClaw 等。
 
 别再每次开新项目都粘贴一大坨提示词了。这个 Skill 会检测仓库现状，然后幂等地应用一套专业基线：新仓库直接跑，老仓库也能补课。它永远不会覆盖你的内容。
 
@@ -39,11 +41,11 @@
 ## 📦 安装
 
 ```bash
-# 通过 OpenClaw
-openclaw skills install git:programmingHLS/repo-standardizer@main
-
-# 或通过 skills CLI
+# 通过 skills CLI（任何 agent 都能用）
 npx skills add programmingHLS/repo-standardizer
+
+# 或通过 OpenClaw
+openclaw skills install git:programmingHLS/repo-standardizer@main
 ```
 
 依赖：`gh` CLI（已登录）、`git`、`jq` + `python3`（用于标签 URL 编码）。
