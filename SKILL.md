@@ -165,7 +165,7 @@ gh api -X POST repos/OWNER/REPO/rulesets --input - <<'EOF'
     "ref_name": {"include": ["refs/heads/DEFAULT_BRANCH"], "exclude": []}
   },
   "rules": [
-    {"type": "pull_request", "parameters": {"required_approving_review_count": 1, "dismiss_stale_reviews_on_push": true, "require_code_owner_review": false}},
+    {"type": "pull_request", "parameters": {"required_approving_review_count": 1, "dismiss_stale_reviews_on_push": true, "require_code_owner_review": false, "require_last_push_approval": true, "required_review_thread_resolution": true}},
     {"type": "required_linear_history"},
     {"type": "deletion"},
     {"type": "non_fast_forward"},
@@ -177,6 +177,10 @@ EOF
 
 - Idempotency: if a ruleset with the same name exists, `PATCH
   repos/OWNER/REPO/rulesets/{id}` instead of creating a duplicate.
+- `pull_request` parameters are **all required** in current API versions:
+  `required_approving_review_count`, `dismiss_stale_reviews_on_push`,
+  `require_code_owner_review`, `require_last_push_approval`,
+  `required_review_thread_resolution`. Omitting any → HTTP 422.
 - `target: "branch"` + `ref_name.include: refs/heads/<default>`; also offer
   `"tag"` rules if tags matter.
 - Org repos: optionally offer org-level rulesets (`/orgs/{org}/rulesets`).
