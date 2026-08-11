@@ -98,12 +98,18 @@ No signal → propose the generic CI (or ask the user whether CI is wanted at al
 
 **Step 1 — Profile the project** (adjust the taxonomy, never copy blindly):
 
-- **Audience / language region** → decides the rating-label style:
-  - Chinese-community project → 王者荣耀-style tiers work well
-    (`tier: 青铜` … `tier: 王者`)
-  - International project → use universal grades instead
+- **Rating labels** → design a themed tier system for THIS project
+  (never copy an existing repo's set verbatim):
+  - Reference example — OpenClaw's official repo uses themed tiers with
+    emoji icons and a low→high color gradient (**EXAMPLE ONLY, do not copy**):
+    `rating: 🧂 unranked krab` → `rating: 🦪 silver shellfish` →
+    `rating: 🦐 gold shrimp` → `rating: 🦀 challenger crab` →
+    `rating: 🐚 platinum hermit` → `rating: 🦞 diamond lobster`
+  - International project → universal grades also work
     (`grade: S/A/B/C/D` or `★`–`★★★★★`)
-  - Anything else → define a rating scheme that fits the project
+  - Always redesign: pick a theme that fits the project (animals, gems,
+    ranks, stars…) and the audience's language. Do not reuse any existing
+    repo's rating labels as-is.
 - **分工小组 (teams)**: if the repo has an explicit division of labor
   (CODEOWNERS, CONTRIBUTING, a team list in docs) → add one `team: *` label
   per group (e.g. `team: frontend`, `team: algorithm`). No team list → skip.
@@ -131,12 +137,22 @@ extend or trim as needed):
   → greens (never gray or red); `wontfix` → gray; `in progress` → blue.
   Everything else: pick colors that look good together and match the label's
   meaning loosely — but prefer variety over strict one-meaning-one-color.
-- **Rating labels need a gradient** (tiers/grades progress in color, e.g.
-  gray → bronze → silver → gold, or dark→light).
+- **Rating labels**: must be colorful with a clear low→high gradient
+  (e.g. gray → bronze → silver → gold, or dark→light); **prefer an emoji /
+  icon prefix** on each rating label (e.g. `rating: 🦞 diamond lobster`)
+  so tiers are scannable at a glance.
+- **Rating labels need docs**: when rating labels are added, also add
+  `LABELS.md` (Step 4) describing each label's meaning and the explicit
+  low→high order, so the ranking is unambiguous.
 - Neighboring labels must be distinguishable. Forbidden: all-one-color,
   adjacent duplicates, or colors that contradict the label content.
 
-**Step 4 — Idempotent upsert.** GitHub has **no** `PUT /labels/{name}`
+**Step 4 — Rating-label docs (only if rating labels exist).** Generate
+`LABELS.md` from `templates/LABELS.md` (or extend an existing docs file):
+list every rating label with its meaning and the explicit low→high order,
+plus the rest of the taxonomy. Commit and push it together with the labels.
+
+**Step 5 — Idempotent upsert.** GitHub has **no** `PUT /labels/{name}`
 endpoint. Upsert = check existence (`GET /labels/{name}`), then
 `POST /labels` (create) or `PATCH /labels/{name}` (update). Works for both
 map-form and array-form `labels.json`:
@@ -264,7 +280,7 @@ Report a final table: `module | status (applied/skipped/failed) | note`.
 ## Templates
 
 All templates live in `templates/`:
-`labels.json`, `config.yml`, `issue-form-bug.yml`, `issue-form-feature.yml`,
-`issue-form-question.yml`, `PR_TEMPLATE.md`, `ci-node.yml`, `ci-python.yml`,
-`ci-go.yml`, `ci-rust.yml`, `CODEOWNERS`, `CONTRIBUTING.md`, `SECURITY.md`,
-`README.md`.
+`labels.json`, `LABELS.md`, `config.yml`, `issue-form-bug.yml`,
+`issue-form-feature.yml`, `issue-form-question.yml`, `PR_TEMPLATE.md`,
+`ci-node.yml`, `ci-python.yml`, `ci-go.yml`, `ci-rust.yml`, `CODEOWNERS`,
+`CONTRIBUTING.md`, `SECURITY.md`, `README.md`.
