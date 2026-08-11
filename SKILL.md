@@ -253,7 +253,8 @@ EOF
 - `README.md`: if missing or bare, generate one from `templates/README.md`
   (badges, install, usage, modules table). Keep the user's existing content if
   it is already substantive — only append a badges block.
-- `CONTRIBUTING.md`, `SECURITY.md`: copy from templates if missing.
+- `CONTRIBUTING.md`, `SECURITY.md`, `CODE_OF_CONDUCT.md`: copy from
+  templates if missing.
 - `LICENSE`: ask the user which license (default MIT) before creating.
 - `CHANGELOG.md`: create with `# Changelog` header only if missing.
 
@@ -283,4 +284,4 @@ All templates live in `templates/`:
 `labels.json`, `LABELS.md`, `config.yml`, `issue-form-bug.yml`,
 `issue-form-feature.yml`, `issue-form-question.yml`, `PR_TEMPLATE.md`,
 `ci-node.yml`, `ci-python.yml`, `ci-go.yml`, `ci-rust.yml`, `CODEOWNERS`,
-`CONTRIBUTING.md`, `SECURITY.md`, `README.md`.
+`CONTRIBUTING.md`, `SECURITY.md`, `CODE_OF_CONDUCT.md`, `README.md`.
