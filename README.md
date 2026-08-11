@@ -1,4 +1,4 @@
-# 🦞 GitHub Repo Standardizer
+# GitHub Repo Standardizer
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![GitHub release](https://img.shields.io/github/v/release/programmingHLS/repo-standardizer)](https://github.com/programmingHLS/repo-standardizer/releases)
