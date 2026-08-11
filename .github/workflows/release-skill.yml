@@ -1,0 +1,33 @@
+name: Release Skill Package
+
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: write
+
+jobs:
+  build-release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build standard skill zip
+        run: |
+          TAG="${GITHUB_REF#refs/tags/}"
+          echo "tag: ${TAG}"
+          mkdir -p dist
+          # skill package = SKILL.md + templates/, no top-level folder
+          cp -r SKILL.md templates dist/skill
+          cd dist/skill
+          zip -r "../repo-standardizer-${TAG}.zip" . >/dev/null
+          cd ..
+          ls -la
+          unzip -l "repo-standardizer-${TAG}.zip" | head -25
+
+      - name: Create GitHub Release with asset
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/repo-standardizer-*.zip
+          generate_release_notes: true
