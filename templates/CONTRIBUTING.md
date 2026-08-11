@@ -24,13 +24,24 @@ guide so your contribution goes smoothly.
 
 ## Commit style
 
-Prefer conventional commits:
+Use conventional commits **with a scope**: `type(scope): description`
 
 ```
-feat: add X
-fix: correct Y
-docs: explain Z
-chore: housekeeping
+feat(labels): add tier labels
+fix(ci): correct release workflow
+```
+
+Common types: `feat` `fix` `docs` `chore` `refactor` `test` `ci` `perf`.
+Scope = the area you touched (module, file, subsystem).
+
+Examples:
+
+```
+feat(labels): add tier labels
+fix(ci): correct release workflow
+fix(docx): update README.md
+docs(readme): explain installation
+chore(ci): bump action version
 ```
 
 ## Code style
