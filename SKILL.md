@@ -269,8 +269,17 @@ README (ask about languages FIRST):
   it is already substantive — only append a badges block.
 - `CONTRIBUTING.md`, `SECURITY.md`, `CODE_OF_CONDUCT.md`: copy from
   templates if missing.
+- `VISION.md`: optional direction doc (modeled on OpenClaw's VISION.md) —
+  generate a short vision from `templates/VISION.md` (origin, guiding
+  principles, current state, direction, contribution rules) if the user
+  wants one.
+- `THIRD_PARTY_NOTICES.md`: add when the project adapts third-party content
+  (licenses, fonts, code of conduct) — list each source and its license.
+- `docs/ARCHITECTURE.md`: for non-trivial projects, generate a short
+  architecture doc (structure, flow, constraints) from the audit.
 - `LICENSE`: ask the user which license (default MIT) before creating.
-- `CHANGELOG.md`: create with `# Changelog` header only if missing.
+- `CHANGELOG.md`: create from `templates/CHANGELOG.md` (Keep a Changelog
+  format) if missing; log notable changes per release.
 
 ### Module G — AI assistant guides (CLAUDE.md / AGENTS.md)
 
@@ -315,4 +324,4 @@ All templates live in `templates/`:
 `issue-form-feature.yml`, `issue-form-question.yml`, `PR_TEMPLATE.md`,
 `ci-node.yml`, `ci-python.yml`, `ci-go.yml`, `ci-rust.yml`, `CODEOWNERS`,
 `CONTRIBUTING.md`, `SECURITY.md`, `CODE_OF_CONDUCT.md`, `CLAUDE.md`,
-`AGENTS.md`, `README.md`, `README.zh.md`.
+`AGENTS.md`, `VISION.md`, `CHANGELOG.md`, `README.md`, `README.zh.md`.

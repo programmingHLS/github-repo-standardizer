@@ -92,10 +92,20 @@ Protect the main branch with a ruleset requiring review
 │   ├── CODE_OF_CONDUCT.md # 行为准则
 │   ├── CLAUDE.md          # Claude Code 仓库指南模板
 │   ├── AGENTS.md          # 通用 AI 助手指南模板
+│   ├── VISION.md          # 项目愿景模板
+│   ├── CHANGELOG.md       # Keep a Changelog 骨架
 │   ├── README.md          # 新仓库 README 骨架（英文）
 │   └── README.zh.md       # 新仓库 README 骨架（中文）
+├── docs/                  # 项目文档
+│   └── ARCHITECTURE.md    # Skill 架构说明
+├── AGENTS.md              # AI 助手指南（根）
+├── CLAUDE.md              # 指向 AGENTS.md 的软链接
+├── VISION.md              # 项目愿景与方向
+├── CHANGELOG.md           # 版本历史
+├── THIRD_PARTY_NOTICES.md # 第三方声明
 ├── LICENSE
-└── README.md
+├── README.md              # 英文（默认）
+└── README.zh.md           # 简体中文
 ```
 
 ## 🤝 贡献

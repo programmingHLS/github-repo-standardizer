@@ -81,6 +81,7 @@ Protect the main branch with a ruleset requiring review
 ├── SKILL.md               # The skill itself
 ├── templates/             # Reusable templates
 │   ├── labels.json        # Label taxonomy (color + description)
+│   ├── LABELS.md          # Rating-label documentation template
 │   ├── issue-form-*.yml   # Bug / feature / question forms
 │   ├── config.yml         # Issue template config
 │   ├── PR_TEMPLATE.md     # Pull request template
@@ -88,9 +89,23 @@ Protect the main branch with a ruleset requiring review
 │   ├── CODEOWNERS         # Default owners file
 │   ├── CONTRIBUTING.md    # Contribution guide
 │   ├── SECURITY.md        # Security policy
-│   └── README.md          # README skeleton for new repos
+│   ├── CODE_OF_CONDUCT.md # Code of conduct
+│   ├── CLAUDE.md          # Claude Code guide template
+│   ├── AGENTS.md          # Generic AI-agent guide template
+│   ├── VISION.md          # Project vision template
+│   ├── CHANGELOG.md       # Keep-a-Changelog skeleton
+│   ├── README.md          # README skeleton (English)
+│   └── README.zh.md       # README skeleton (简体中文)
+├── docs/                  # Project docs
+│   └── ARCHITECTURE.md    # Skill architecture
+├── AGENTS.md              # AI-agent guidance (root)
+├── CLAUDE.md              # symlink → AGENTS.md
+├── VISION.md              # Project vision & direction
+├── CHANGELOG.md           # Release history
+├── THIRD_PARTY_NOTICES.md # Third-party attributions
 ├── LICENSE
-└── README.md
+├── README.md              # English (default)
+└── README.zh.md           # 简体中文
 ```
 
 ## 🤝 Contributing
