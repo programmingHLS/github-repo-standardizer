@@ -38,7 +38,7 @@ jobs:
               text = open('CHANGELOG.md', encoding='utf-8').read()
           except FileNotFoundError:
               print(''); sys.exit(0)
-          m = re.search(r'^## \[' + re.escape(tag) + r'\](.*?)(?=^## |\Z)', text, re.M | re.S)
+          m = re.search(r'^## \[' + re.escape(tag) + r'\][^\n]*\n(.*?)(?=^## |\Z)', text, re.M | re.S)
           print(m.group(1).strip() if m else '')
           PYEOF
           echo "body bytes: $(wc -c < /tmp/release-body.md)"

@@ -5,6 +5,13 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), versions follo
 
 ## [Unreleased]
 
+## [v0.1.9] - 2026-08-11
+
+### Fixed
+
+- Release workflow: changelog regex now excludes the title date from the
+  extracted release body
+
 ## [v0.1.8] - 2026-08-11
 
 ### Changed
