@@ -11,7 +11,9 @@
   "priority: low": {"color": "0e8a16", "description": "Nice to have"},
   "status: blocked": {"color": "5319e7", "description": "Blocked by something else"},
   "status: in progress": {"color": "1d76db", "description": "Work is underway"},
-  "status: wontfix": {"color": "ffffff", "description": "Will not be addressed"},
+  "status: ready to merge": {"color": "0e8a16", "description": "Approved and ready to merge — green means go"},
+  "status: merged": {"color": "2da44e", "description": "Already merged"},
+  "status: wontfix": {"color": "d4d4d4", "description": "Will not be addressed"},
   "dependencies": {"color": "0366d6", "description": "Pull requests that update a dependency"},
   "security": {"color": "ff0000", "description": "Security-related issues"}
 }

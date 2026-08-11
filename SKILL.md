@@ -94,11 +94,52 @@ No signal → propose the generic CI (or ask the user whether CI is wanted at al
 3. **Apply modules** (each idempotent; run in this order).
 4. **Verify** — re-query and print an `applied / skipped / failed` checklist.
 
-### Module A — Labels (idempotent upsert)
+### Module A — Labels (design first, then idempotent upsert)
 
-GitHub has **no** `PUT /labels/{name}` endpoint. Upsert = check existence
-(`GET /labels/{name}`), then `POST /labels` (create) or `PATCH /labels/{name}`
-(update). Works for both map-form and array-form `labels.json`:
+**Step 1 — Profile the project** (adjust the taxonomy, never copy blindly):
+
+- **Audience / language region** → decides the rating-label style:
+  - Chinese-community project → 王者荣耀-style tiers work well
+    (`tier: 青铜` … `tier: 王者`)
+  - International project → use universal grades instead
+    (`grade: S/A/B/C/D` or `★`–`★★★★★`)
+  - Anything else → define a rating scheme that fits the project
+- **分工小组 (teams)**: if the repo has an explicit division of labor
+  (CODEOWNERS, CONTRIBUTING, a team list in docs) → add one `team: *` label
+  per group (e.g. `team: frontend`, `team: algorithm`). No team list → skip.
+- **Project type** (library / app / coursework / org-infra) → decide whether
+  `dependencies`, `security`, `docs` etc. categories are needed.
+
+**Step 2 — Compose categories** (baseline in `templates/labels.json`,
+extend or trim as needed):
+
+| Category | Labels | When |
+|---|---|---|
+| Type (always) | `bug` `enhancement` `documentation` `question` `help wanted` `good first issue` | always |
+| Priority | `priority: critical/high/medium/low` | recommended |
+| Status | `status: in progress` `blocked` `wontfix` `ready to merge` `merged` | recommended |
+| Rating | tier/grade labels, gradient | per project (Step 1) |
+| Team | `team: <group>` one per group | only if a division of labor exists |
+
+**Step 3 — Color rules (mandatory):**
+
+- **Diverse palette**: colors must be rich and varied — the whole label set
+  should look like a palette, not a monochrome block. Even within one
+  category, spread the hues (e.g. priority labels: red / orange / yellow /
+  green, or four clearly different hues).
+- **Semantic hints (not hard mappings)**: `ready to merge` / `merged` / done
+  → greens (never gray or red); `wontfix` → gray; `in progress` → blue.
+  Everything else: pick colors that look good together and match the label's
+  meaning loosely — but prefer variety over strict one-meaning-one-color.
+- **Rating labels need a gradient** (tiers/grades progress in color, e.g.
+  gray → bronze → silver → gold, or dark→light).
+- Neighboring labels must be distinguishable. Forbidden: all-one-color,
+  adjacent duplicates, or colors that contradict the label content.
+
+**Step 4 — Idempotent upsert.** GitHub has **no** `PUT /labels/{name}`
+endpoint. Upsert = check existence (`GET /labels/{name}`), then
+`POST /labels` (create) or `PATCH /labels/{name}` (update). Works for both
+map-form and array-form `labels.json`:
 
 ```bash
 R="repos/OWNER/REPO"
