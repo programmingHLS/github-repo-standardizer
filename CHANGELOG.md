@@ -5,6 +5,23 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), versions follo
 
 ## [Unreleased]
 
+## [v0.2.1] - 2026-08-13
+
+### Changed
+
+- Label taxonomy now uses emoji prefixes across **every** category (type,
+  priority, status, team, rating) — not just rating tiers — so the whole set
+  is scannable at a glance
+- SKILL.md: emoji-prefix rule promoted from rating-only to the full taxonomy;
+  Module A tables and examples updated
+- SKILL.md description + README tagline rewritten for discoverability — adds
+  `professionalize`, `tidy up`, `polish`, `emoji label taxonomy` trigger words
+
+### Added
+
+- `templates/labels.json`: emoji-prefixed baseline labels (🐛 ✨ 📚 ❓ 🙋 🌱
+  🔴🟠🟡🟢 🧱🚧✅🎉🚫 📦 🔒)
+
 ## [v0.2.0] - 2026-08-11
 
 ### Changed

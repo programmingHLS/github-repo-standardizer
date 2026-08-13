@@ -1,6 +1,6 @@
 ---
 name: repo-standardizer
-description: Standardize a GitHub repository end-to-end — issue forms, PR template, label taxonomy, CI workflows, CODEOWNERS, rulesets, and docs. Use when creating a new repository or professionalizing an existing one.
+description: Standardize, professionalize, or tidy up any GitHub repository — issue forms, PR template, emoji label taxonomy, CI workflows, CODEOWNERS, rulesets, and docs. Use when creating a new repo, polishing an existing one, or setting up best practices from day one.
 metadata:
   openclaw:
     requires:
@@ -125,14 +125,15 @@ No signal → propose the generic CI (or ask the user whether CI is wanted at al
   `dependencies`, `security`, `docs` etc. categories are needed.
 
 **Step 2 — Compose categories** (baseline in `templates/labels.json`,
-extend or trim as needed):
+extend or trim as needed). **Prefix every label with an emoji** — the whole
+taxonomy must be scannable at a glance, not just the rating tiers:
 
 | Category | Labels | When |
 |---|---|---|
-| Type (always) | `bug` `enhancement` `documentation` `question` `help wanted` `good first issue` | always |
-| Priority | `priority: critical/high/medium/low` | recommended |
-| Status | `status: in progress` `blocked` `wontfix` `ready to merge` `merged` | recommended |
-| Rating | tier/grade labels, gradient | per project (Step 1) |
+| Type (always) | `🐛 bug` `✨ enhancement` `📚 documentation` `❓ question` `🙋 help wanted` `🌱 good first issue` | always |
+| Priority | `🔴 priority: critical` `🟠 high` `🟡 medium` `🟢 low` | recommended |
+| Status | `🚧 status: in progress` `🧱 blocked` `🚫 wontfix` `✅ ready to merge` `🎉 merged` | recommended |
+| Rating | themed emoji tiers, gradient | per project (Step 1) |
 | Team | `team: <group>` one per group | only if a division of labor exists |
 
 **Step 3 — Color rules (mandatory):**
@@ -145,10 +146,11 @@ extend or trim as needed):
   → greens (never gray or red); `wontfix` → gray; `in progress` → blue.
   Everything else: pick colors that look good together and match the label's
   meaning loosely — but prefer variety over strict one-meaning-one-color.
-- **Rating labels**: must be colorful with a clear low→high gradient
-  (e.g. gray → bronze → silver → gold, or dark→light); **prefer an emoji /
-  icon prefix** on each rating label (e.g. `rating: 🦞 diamond lobster`)
-  so tiers are scannable at a glance.
+- **Every label gets an emoji / icon prefix** — not just rating tiers. Each
+  category carries a distinct, semantic emoji (bugs 🐛, features ✨, docs 📚,
+  priority dots 🔴🟠🟡🟢, status markers 🚧✅🎉🚫). The emoji must match the
+  label's meaning, never decorative-only. Rating tiers in particular need a
+  clear low→high emoji gradient (e.g. `rating: 🦞 diamond lobster`).
 - **Rating labels need docs**: when rating labels are added, also add
   `LABELS.md` (Step 4) describing each label's meaning and the explicit
   low→high order, so the ranking is unambiguous.
