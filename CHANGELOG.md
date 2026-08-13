@@ -5,6 +5,15 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), versions follo
 
 ## [Unreleased]
 
+## [v0.2.3] - 2026-08-13
+
+### Added
+
+- SKILL.md Module A: `Governance / auto-close rules` dimension — `r:*` and
+  bot-state labels (`clawsweeper:*`, `triage:*`, `close:*`) are **signal
+  labels, not categories**, only meaningful when a governance bot actually
+  runs on the repo; skip them otherwise
+
 ## [v0.2.2] - 2026-08-13
 
 ### Changed

@@ -160,6 +160,7 @@ that applies, but never force one the repo doesn't use.
 | Size | `size: XS` `size: S` `size: M` `size: L` `size: XL` | large repo / team estimation |
 | Area / module | `area: core` `area: api` `area: cli` … | multi-module project |
 | Bug detail | `bug: behavior` `bug: crash` | crash-prone / many bug reports |
+| Governance / auto-close rules | `r: spam` `r: support` `r: no-ci-pr` … `clawsweeper:*` `triage:*` | automation bot enforces close/lock/review rules |
 | Close reason | `close: duplicate` `close: superseded` `close: invalid` … | close-automation bot exists |
 | Triage | `triage: bug` `triage: blocked` `triage: needs-review` … | triage workflow exists |
 | Proof | `proof: 🎥 video` `proof: 📸 screenshot` | reproduction evidence required |
@@ -172,6 +173,16 @@ that applies, but never force one the repo doesn't use.
 | Channel | `channel: discord` `channel: telegram` … | multi-channel product (OpenClaw-style) |
 | App / platform | `app: ios` `app: android` `app: web-ui` … | multi-platform app |
 | Extensions / plugins | `extensions: <name>` `plugin: <name>` | plugin/extension ecosystem |
+
+**Governance rules (`r:` / bot labels).** Auto-close and bot-state labels are
+**signal labels, not categories** — a bot (or Actions workflow) reads them and
+acts (auto-close, auto-lock, auto-fix, auto-merge). They are useless without
+the matching automation, so **skip them unless a governance bot actually runs**
+on the repo. If one does, add only the `r:*` rules matching the project's real
+off-topic / reject criteria (e.g. `r: spam`, `r: support`, `r: no-ci-pr`) plus
+the bot's own state labels (`clawsweeper:*`, `triage:*`, `close:*`). Never copy
+OpenClaw's set verbatim — its rules encode OpenClaw's specific product
+boundaries.
 
 **Impact dimension** — the security "blast radius" judgement (generalized
 from OpenClaw; trim to the repo's actual failure modes):
