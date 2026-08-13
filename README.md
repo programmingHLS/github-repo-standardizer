@@ -22,7 +22,7 @@ Stop pasting the same wall of prompts every time you start a new project. This s
 
 | Module | What it does |
 |---|---|
-| 🏷️ **Labels** | Idempotent upsert of an emoji-prefixed label taxonomy — `🐛 bug`, `✨ enhancement`, `🔴 priority: critical`, `✅ ready to merge`... |
+| 🏷️ **Labels** | Idempotent upsert of a full emoji label taxonomy — `🔴 P0`–`🟢 P3` priority, `impact: security` severity, `🐛 bug`, `✅ ready to merge`... |
 | 📋 **Issue forms** | YAML issue forms for bug / feature / question + `config.yml` |
 | 🔀 **PR template** | Structured pull request template with checklist |
 | 🤖 **CI workflows** | Auto-detects your test framework (Node / Python / Go / Rust) and adds a matching GitHub Actions workflow |

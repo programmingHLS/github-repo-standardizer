@@ -5,6 +5,19 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), versions follo
 
 ## [Unreleased]
 
+## [v0.2.2] - 2026-08-13
+
+### Changed
+
+- Priority labels switched to `P0`–`P3` (OpenClaw convention; `P0` = emergency)
+- Added `impact:` severity dimension — security / data-loss / availability /
+  auth-provider / session-state / message-loss / ux-blocker / ux-friction
+- SKILL.md Module A rewritten into a full dimension menu mirroring OpenClaw's
+  official taxonomy — every dimension is opt-in ("add only if the repo needs
+  it"), Type is the only mandatory one
+- Label language rule: names + descriptions follow the user's chosen language
+  (Preflight step 5)
+
 ## [v0.2.1] - 2026-08-13
 
 ### Changed

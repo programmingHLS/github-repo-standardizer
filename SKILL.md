@@ -121,20 +121,72 @@ No signal → propose the generic CI (or ask the user whether CI is wanted at al
 - **分工小组 (teams)**: if the repo has an explicit division of labor
   (CODEOWNERS, CONTRIBUTING, a team list in docs) → add one `team: *` label
   per group (e.g. `team: frontend`, `team: algorithm`). No team list → skip.
-- **Project type** (library / app / coursework / org-infra) → decide whether
-  `dependencies`, `security`, `docs` etc. categories are needed.
+- **Project type** (library / app / coursework / org-infra) → decide which
+  dimensions below are needed (`dependencies`, `security`, `docs`, …).
+- **Language**: write every label name and description in the language chosen
+  in Preflight step 5 (default English; local project → its primary language).
+  Never assume — translate the whole taxonomy (emoji + description) into the
+  chosen language.
 
-**Step 2 — Compose categories** (baseline in `templates/labels.json`,
-extend or trim as needed). **Prefix every label with an emoji** — the whole
-taxonomy must be scannable at a glance, not just the rating tiers:
+**Step 2 — Compose categories.** Baseline lives in `templates/labels.json`;
+extend or trim per the profile in Step 1. **Prefix every label with an
+emoji** — the whole taxonomy must be scannable at a glance.
 
-| Category | Labels | When |
+**Every dimension is opt-in except Type.** Add a dimension only if the repo
+actually needs it; skip it otherwise. The menu below mirrors OpenClaw's
+official label taxonomy (the richest open reference) — cover every dimension
+that applies, but never force one the repo doesn't use.
+
+**Priority uses `P0`–`P3`** (OpenClaw's convention — `P0` = emergency):
+
+| Label | Meaning | Color |
+|---|---|---|
+| `🔴 P0` | Emergency: data loss, security bypass, crash loop, unusable core | `b60205` |
+| `🟠 P1` | High: blocks planned work, needs attention soon | `d93f0b` |
+| `🟡 P2` | Medium: normal priority | `fbca04` |
+| `🟢 P3` | Low: nice to have | `0e8a16` |
+
+**Dimension menu** (write each label in the user's chosen language):
+
+| Dimension | Labels (examples) | Add when |
 |---|---|---|
 | Type (always) | `🐛 bug` `✨ enhancement` `📚 documentation` `❓ question` `🙋 help wanted` `🌱 good first issue` | always |
-| Priority | `🔴 priority: critical` `🟠 high` `🟡 medium` `🟢 low` | recommended |
-| Status | `🚧 status: in progress` `🧱 blocked` `🚫 wontfix` `✅ ready to merge` `🎉 merged` | recommended |
-| Rating | themed emoji tiers, gradient | per project (Step 1) |
-| Team | `team: <group>` one per group | only if a division of labor exists |
+| Priority | `🔴 P0` `🟠 P1` `🟡 P2` `🟢 P3` | recommended |
+| Status | `🚧 in progress` `🧱 blocked` `✅ ready to merge` `🎉 merged` `🚫 wontfix` | recommended |
+| Impact | `impact: security` `impact: data-loss` `impact: availability` … | recommended; required for security-sensitive repos |
+| Rating (PR quality) | `rating: 🦞 diamond lobster` … themed tiers | PR-quality gate exists |
+| Issue rating | `issue-rating: 🦞 diamond lobster` … | issue-quality gate exists (may fold into Rating) |
+| Merge risk | `merge-risk: 🚨 security-boundary` `merge-risk: 🚨 availability` … | maintainer review process exists |
+| Size | `size: XS` `size: S` `size: M` `size: L` `size: XL` | large repo / team estimation |
+| Area / module | `area: core` `area: api` `area: cli` … | multi-module project |
+| Bug detail | `bug: behavior` `bug: crash` | crash-prone / many bug reports |
+| Close reason | `close: duplicate` `close: superseded` `close: invalid` … | close-automation bot exists |
+| Triage | `triage: bug` `triage: blocked` `triage: needs-review` … | triage workflow exists |
+| Proof | `proof: 🎥 video` `proof: 📸 screenshot` | reproduction evidence required |
+| Dependencies | `📦 dependencies` | dependabot / dependency PRs |
+| Security | `🔒 security` | security-sensitive repo |
+| Regression | `↩️ regression` | stable project (was-working-now-fails) |
+| Stale | `🕰️ stale` `🚫 no-stale` | stale automation exists |
+| Team | `team: <group>` | explicit division of labor |
+| Duplicate / invalid | `👯 duplicate` `🚫 invalid` | active public repo with many issues |
+| Channel | `channel: discord` `channel: telegram` … | multi-channel product (OpenClaw-style) |
+| App / platform | `app: ios` `app: android` `app: web-ui` … | multi-platform app |
+| Extensions / plugins | `extensions: <name>` `plugin: <name>` | plugin/extension ecosystem |
+
+**Impact dimension** — the security "blast radius" judgement (generalized
+from OpenClaw; trim to the repo's actual failure modes):
+
+| Label | Meaning |
+|---|---|
+| `impact: security` | security boundary, credentials, authz, sandbox, sensitive data |
+| `impact: data-loss` | loses/corrupts/drops user, session, or config data |
+| `impact: availability` | crash, hang, restart loop, or process outage |
+| `impact: auth-provider` | auth / routing / model choice / secret resolution breaks |
+| `impact: session-state` | session / memory / state drifts or corrupts (stateful systems) |
+| `impact: message-loss` | messages/events lost, duplicated, or misrouted (messaging systems) |
+| `impact: ux-blocker` | user blocked with no terminal/logs/support (GUI products) |
+| `impact: ux-friction` | confusing flow / support burden (GUI products) |
+| `impact: other` | meaningful impact outside the owned taxonomy |
 
 **Step 3 — Color rules (mandatory):**
 

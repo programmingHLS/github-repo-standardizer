@@ -22,7 +22,7 @@
 
 | 模块 | 作用 |
 |---|---|
-| 🏷️ **标签** | Emoji 前缀标签体系的幂等 upsert——`🐛 bug`、`✨ enhancement`、`🔴 priority: critical`、`✅ ready to merge`...，按项目画像定制 |
+| 🏷️ **标签** | 完整 Emoji 标签体系的幂等 upsert——`🔴 P0`–`🟢 P3` 优先级、`impact: security` 影响评级、`🐛 bug`、`✅ ready to merge`...，按项目画像定制 |
 | 📋 **Issue 表单** | bug / feature / question 的 YAML 表单 + `config.yml` |
 | 🔀 **PR 模板** | 带清单的结构化 PR 模板 |
 | 🤖 **CI 工作流** | 自动探测测试框架（Node / Python / Go / Rust）并添加匹配的 GitHub Actions |
