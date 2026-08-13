@@ -95,6 +95,22 @@ No signal → propose the generic CI (or ask the user whether CI is wanted at al
   assume a language.
 - (README languages are asked separately in Module F.)
 
+### 6. Ask about automation (decides the Governance labels)
+
+Ask the user whether the repo has any **automation bots or AI writers**
+running on it — e.g. dependabot, a Stale bot, ClawSweeper, or an AI coding
+agent that auto-files PRs / auto-fixes issues.
+
+- **Why ask**: `r:*` / `clawsweeper:*` / `triage:*` / `close:*` labels are
+  **signal labels, not categories** — a bot reads them and acts (auto-close,
+  auto-lock, auto-fix, auto-merge). Without running automation those labels
+  are dead weight, so the answer decides whether the Governance dimension is
+  added at all (Module A, Step 2).
+- **Yes** → plan the `Governance / auto-close rules` dimension (add only the
+  `r:*` rules matching the project's real reject criteria).
+- **No** → skip that dimension entirely — never add `r:*` / bot labels to a
+  repo with no automation.
+
 ## Workflow
 
 1. **Preflight** (above). If auth or access fails, stop with a clear message.
@@ -174,7 +190,9 @@ that applies, but never force one the repo doesn't use.
 | App / platform | `app: ios` `app: android` `app: web-ui` … | multi-platform app |
 | Extensions / plugins | `extensions: <name>` `plugin: <name>` | plugin/extension ecosystem |
 
-**Governance rules (`r:` / bot labels).** Auto-close and bot-state labels are
+**Governance rules (`r:` / bot labels) — gated by Preflight step 6.** Only
+consider this dimension if the user answered "yes" to automation bots / AI
+writers; skip it entirely otherwise. Auto-close and bot-state labels are
 **signal labels, not categories** — a bot (or Actions workflow) reads them and
 acts (auto-close, auto-lock, auto-fix, auto-merge). They are useless without
 the matching automation, so **skip them unless a governance bot actually runs**

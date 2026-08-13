@@ -5,6 +5,16 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), versions follo
 
 ## [Unreleased]
 
+## [v0.2.4] - 2026-08-13
+
+### Added
+
+- Preflight step 6: ask whether the repo has automation bots / AI writers
+  (dependabot, Stale, ClawSweeper, AI coding agent…) — the answer decides
+  whether the Governance / auto-close-rules labels are added at all, with the
+  reasoning spelled out
+- Module A Governance dimension now gated by Preflight step 6
+
 ## [v0.2.3] - 2026-08-13
 
 ### Added
