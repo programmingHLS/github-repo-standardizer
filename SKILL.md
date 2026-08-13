@@ -1,6 +1,6 @@
 ---
 name: repo-standardizer
-description: Standardize, professionalize, or tidy up any GitHub repository — issue forms, PR template, emoji label taxonomy, CI workflows, CODEOWNERS, rulesets, and docs. Use when creating a new repo, polishing an existing one, or setting up best practices from day one.
+description: Standardize, professionalize, or tidy up any GitHub repository — emoji label taxonomy (P0–P3 priority, impact severity, auto-close rules), issue forms, PR template, CI, CODEOWNERS, rulesets, and docs. Use when creating a new repo or polishing an existing one.
 metadata:
   openclaw:
     requires:
@@ -143,6 +143,10 @@ agent that auto-files PRs / auto-fixes issues.
   in Preflight step 5 (default English; local project → its primary language).
   Never assume — translate the whole taxonomy (emoji + description) into the
   chosen language.
+  - **Exception — bot labels**: `r:*` / `clawsweeper:*` / `triage:*` /
+    `close:*` names are matched literally by automation code (almost always
+    English). Keep those **names** in the bot's language — a translated name
+    breaks the bot. Only their `description` may use the user's language.
 
 **Step 2 — Compose categories.** Baseline lives in `templates/labels.json`;
 extend or trim per the profile in Step 1. **Prefix every label with an

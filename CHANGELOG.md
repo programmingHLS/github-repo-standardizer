@@ -5,6 +5,16 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), versions follo
 
 ## [Unreleased]
 
+## [v0.2.5] - 2026-08-13
+
+### Changed
+
+- description updated to reflect the fuller taxonomy: P0–P3 priority, impact
+  severity, auto-close rules
+- SKILL.md Module A: bot-label language exception — `r:*` / `clawsweeper:*` /
+  `triage:*` / `close:*` names stay in the bot's language (automation matches
+  literal names); only their description uses the user's language
+
 ## [v0.2.4] - 2026-08-13
 
 ### Added
