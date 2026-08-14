@@ -10,7 +10,7 @@
 [![GitHub forks](https://img.shields.io/github/forks/programmingHLS/repo-standardizer)](https://github.com/programmingHLS/repo-standardizer/network)
 [![GitHub contributors](https://img.shields.io/github/contributors/programmingHLS/repo-standardizer)](https://github.com/programmingHLS/repo-standardizer/graphs/contributors)
 
-> **One command turns any bare GitHub repo into a professional one — emoji label taxonomy, issue forms, PR template, CI, rulesets, and docs.**
+> **One command turns any bare GitHub repo into a professional one — label taxonomy (emoji rating tiers), issue forms, PR template, CI, rulesets, and docs.**
 >
 > **Agent-agnostic**: works with any skills-enabled agent — Claude Code, Cursor, Copilot, OpenClaw, and more.
 
@@ -22,7 +22,7 @@ Stop pasting the same wall of prompts every time you start a new project. This s
 
 | Module | What it does |
 |---|---|
-| 🏷️ **Labels** | Idempotent upsert of a full emoji label taxonomy — `🔴 P0`–`🟢 P3` priority, `impact: security` severity, `🐛 bug`, `✅ ready to merge`... |
+| 🏷️ **Labels** | Idempotent upsert of a full label taxonomy — `P0`–`P3` priority, `impact: security` severity, `bug`, `ready to merge`... (rating tiers always emoji) |
 | 📋 **Issue forms** | YAML issue forms for bug / feature / question + `config.yml` |
 | 🔀 **PR template** | Structured pull request template with checklist |
 | 🤖 **CI workflows** | Auto-detects your test framework (Node / Python / Go / Rust) and adds a matching GitHub Actions workflow |

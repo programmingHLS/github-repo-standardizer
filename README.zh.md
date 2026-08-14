@@ -10,7 +10,7 @@
 [![GitHub forks](https://img.shields.io/github/forks/programmingHLS/repo-standardizer)](https://github.com/programmingHLS/repo-standardizer/network)
 [![GitHub contributors](https://img.shields.io/github/contributors/programmingHLS/repo-standardizer)](https://github.com/programmingHLS/repo-standardizer/graphs/contributors)
 
-> **一个 Skill，一键把任何裸奔的 GitHub 仓库变成专业仓库——emoji 标签体系、issue 表单、PR 模板、CI、规则集、文档，一条命令搞定。**
+> **一个 Skill，一键把任何裸奔的 GitHub 仓库变成专业仓库——标签体系（段位强制 Emoji）、issue 表单、PR 模板、CI、规则集、文档，一条命令搞定。**
 >
 > **与 Agent 无关**：任何支持 skills 的 agent 都能用——Claude Code、Cursor、Copilot、OpenClaw 等。
 
@@ -22,7 +22,7 @@
 
 | 模块 | 作用 |
 |---|---|
-| 🏷️ **标签** | 完整 Emoji 标签体系的幂等 upsert——`🔴 P0`–`🟢 P3` 优先级、`impact: security` 影响评级、`🐛 bug`、`✅ ready to merge`...，按项目画像定制 |
+| 🏷️ **标签** | 完整标签体系的幂等 upsert——`P0`–`P3` 优先级、`impact: security` 影响评级、`bug`、`ready to merge`...（段位标签强制 Emoji），按项目画像定制 |
 | 📋 **Issue 表单** | bug / feature / question 的 YAML 表单 + `config.yml` |
 | 🔀 **PR 模板** | 带清单的结构化 PR 模板 |
 | 🤖 **CI 工作流** | 自动探测测试框架（Node / Python / Go / Rust）并添加匹配的 GitHub Actions |

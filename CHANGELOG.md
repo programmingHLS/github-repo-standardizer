@@ -5,6 +5,20 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), versions follo
 
 ## [Unreleased]
 
+## [v0.2.6] - 2026-08-14
+
+### Changed
+
+- Emoji policy relaxed: rating tiers (`rating:*` / `issue-rating:*`) are now
+  the ONLY mandatory-emoji labels (clear low→high gradient); all other
+  labels leave emoji to the agent's judgment
+- Consistency rule added: within one dimension, either ALL labels carry an
+  emoji or NONE do — never a mixed half-emoji dimension
+- `templates/labels.json` baseline now ships plain names (no emoji) —
+  `bug`, `P0`–`P3`, `status: *`, `dependencies`, `security`…; impact labels
+  were already emoji-free, so every dimension is now consistent
+- SKILL.md / LABELS.md / README (en + zh) wording updated to the new policy
+
 ## [v0.2.5] - 2026-08-13
 
 ### Changed

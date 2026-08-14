@@ -1,6 +1,6 @@
 ---
 name: repo-standardizer
-description: Standardize, professionalize, or tidy up any GitHub repository — emoji label taxonomy (P0–P3 priority, impact severity, auto-close rules), issue forms, PR template, CI, CODEOWNERS, rulesets, and docs. Use when creating a new repo or polishing an existing one.
+description: Standardize, professionalize, or tidy up any GitHub repository — label taxonomy with emoji-mandated rating tiers (P0–P3 priority, impact severity, auto-close rules), issue forms, PR template, CI, CODEOWNERS, rulesets, and docs. Use when creating a new repo or polishing an existing one.
 metadata:
   openclaw:
     requires:
@@ -141,23 +141,32 @@ agent that auto-files PRs / auto-fixes issues.
   dimensions below are needed (`dependencies`, `security`, `docs`, …).
 - **Language**: write every label name and description in the language chosen
   in Preflight step 5 (default English; local project → its primary language).
-  Never assume — translate the whole taxonomy (emoji + description) into the
-  chosen language.
+  Never assume — translate every label name and description into the chosen
+  language (emoji glyphs stay as-is).
   - **Exception — bot labels**: `r:*` / `clawsweeper:*` / `triage:*` /
     `close:*` names are matched literally by automation code (almost always
     English). Keep those **names** in the bot's language — a translated name
     breaks the bot. Only their `description` may use the user's language.
 
-**Step 2 — Compose categories.** Baseline lives in `templates/labels.json`;
-extend or trim per the profile in Step 1. **Prefix every label with an
-emoji** — the whole taxonomy must be scannable at a glance.
+**Step 2 — Compose categories.** Baseline lives in `templates/labels.json`
+(plain names, no emoji); extend or trim per the profile in Step 1.
+
+**Emoji policy — rating tiers are the ONLY mandatory-emoji labels.** Every
+`rating:*` / `issue-rating:*` tier MUST carry an emoji with a clear low→high
+gradient (e.g. `rating: 🦞 diamond lobster`). All other labels: emoji is the
+agent's call — add icons where they aid scanning, omit them where they
+clutter. **Consistency rule: within one dimension, either ALL labels carry
+an emoji or NONE do** — never a mixed half-emoji dimension (e.g. don't ship
+`🐛 bug` next to a plain `enhancement`).
 
 **Every dimension is opt-in except Type.** Add a dimension only if the repo
 actually needs it; skip it otherwise. The menu below mirrors OpenClaw's
 official label taxonomy (the richest open reference) — cover every dimension
 that applies, but never force one the repo doesn't use.
 
-**Priority uses `P0`–`P3`** (OpenClaw's convention — `P0` = emergency):
+**Priority uses `P0`–`P3`** (OpenClaw's convention — `P0` = emergency).
+Examples in the tables below show the optional emoji style — apply them
+all or none per dimension (baseline ships plain `P0`–`P3`):
 
 | Label | Meaning | Color |
 |---|---|---|
@@ -231,11 +240,13 @@ from OpenClaw; trim to the repo's actual failure modes):
   → greens (never gray or red); `wontfix` → gray; `in progress` → blue.
   Everything else: pick colors that look good together and match the label's
   meaning loosely — but prefer variety over strict one-meaning-one-color.
-- **Every label gets an emoji / icon prefix** — not just rating tiers. Each
-  category carries a distinct, semantic emoji (bugs 🐛, features ✨, docs 📚,
-  priority dots 🔴🟠🟡🟢, status markers 🚧✅🎉🚫). The emoji must match the
-  label's meaning, never decorative-only. Rating tiers in particular need a
-  clear low→high emoji gradient (e.g. `rating: 🦞 diamond lobster`).
+- **Emoji policy**: rating tiers (段位) are emoji-**mandatory** — every
+  `rating:*` / `issue-rating:*` label needs a clear low→high emoji gradient
+  (e.g. `rating: 🦞 diamond lobster`). Everywhere else, emoji is the agent's
+  call: use icons where they aid scanning, omit them where they clutter.
+  **Consistency: within one dimension, all labels carry an emoji or none
+  do** — never a mixed half-emoji dimension. If used, the emoji must match
+  the label's meaning, never decorative-only.
 - **Rating labels need docs**: when rating labels are added, also add
   `LABELS.md` (Step 4) describing each label's meaning and the explicit
   low→high order, so the ranking is unambiguous.
