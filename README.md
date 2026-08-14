@@ -10,7 +10,7 @@
 [![GitHub forks](https://img.shields.io/github/forks/programmingHLS/repo-standardizer)](https://github.com/programmingHLS/repo-standardizer/network)
 [![GitHub contributors](https://img.shields.io/github/contributors/programmingHLS/repo-standardizer)](https://github.com/programmingHLS/repo-standardizer/graphs/contributors)
 
-> **One command turns any bare GitHub repo into a professional one — label taxonomy (emoji rating tiers), issue forms, PR template, CI, rulesets, and docs.**
+> **One command polishes any GitHub repo's surface — label taxonomy (emoji rating tiers), issue forms, PR template, CI, rulesets, docs. Repo meta & config only, no code logic touched.**
 >
 > **Agent-agnostic**: works with any skills-enabled agent — Claude Code, Cursor, Copilot, OpenClaw, and more.
 
@@ -32,6 +32,7 @@ Stop pasting the same wall of prompts every time you start a new project. This s
 
 ## 🧠 Safety by design
 
+- **Surface-only**: touches labels, templates, CI configs, rulesets, and docs — never source code logic.
 - **Auth-first**: checks `gh auth status` before anything; if you're not logged in, it tells you exactly how to log in (or provide a token). No token → no action.
 - **Repo-aware**: detects personal vs. organization repos and `public` vs. `private` visibility, and adapts what it does.
 - **Idempotent**: run it twice, get the same result. Existing labels are updated, not duplicated; existing templates are diffed, not overwritten.

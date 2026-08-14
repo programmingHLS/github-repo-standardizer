@@ -1,6 +1,6 @@
 ---
 name: repo-standardizer
-description: Standardize, professionalize, or tidy up any GitHub repository — label taxonomy with emoji-mandated rating tiers (P0–P3 priority, impact severity, auto-close rules), issue forms, PR template, CI, CODEOWNERS, rulesets, and docs. Use when creating a new repo or polishing an existing one.
+description: Polish any GitHub repository's surface — labels (emoji rating tiers, P0–P3 priority, impact severity), issue forms, PR template, CI workflows, CODEOWNERS, rulesets, docs. Repo meta & config only — no code logic touched. Use when creating a new repo or polishing an existing one.
 metadata:
   openclaw:
     requires:
@@ -9,8 +9,9 @@ metadata:
 
 # GitHub Repo Standardizer
 
-Detect a repository's current state, then apply a professional baseline:
-issue forms, PR template, label taxonomy, CI, CODEOWNERS, rulesets, docs.
+Detect a repository's current state, then polish its surface: issue forms,
+PR template, label taxonomy, CI, CODEOWNERS, rulesets, docs. Works on
+repo metadata and config files only — code logic is never touched.
 **Idempotent** — safe to re-run; fills gaps and reconciles drift without
 duplicating or clobbering.
 
