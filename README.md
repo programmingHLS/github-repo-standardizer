@@ -3,12 +3,12 @@
 < English | [简体中文](./README.zh.md) >
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![GitHub release](https://img.shields.io/github/v/release/programmingHLS/repo-standardizer)](https://github.com/programmingHLS/repo-standardizer/releases)
-[![GitHub issues](https://img.shields.io/github/issues/programmingHLS/repo-standardizer)](https://github.com/programmingHLS/repo-standardizer/issues)
-[![GitHub pull requests](https://img.shields.io/github/issues-pr/programmingHLS/repo-standardizer)](https://github.com/programmingHLS/repo-standardizer/pulls)
-[![GitHub stars](https://img.shields.io/github/stars/programmingHLS/repo-standardizer)](https://github.com/programmingHLS/repo-standardizer/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/programmingHLS/repo-standardizer)](https://github.com/programmingHLS/repo-standardizer/network)
-[![GitHub contributors](https://img.shields.io/github/contributors/programmingHLS/repo-standardizer)](https://github.com/programmingHLS/repo-standardizer/graphs/contributors)
+[![GitHub release](https://img.shields.io/github/v/release/programmingWTF/repo-standardizer)](https://github.com/programmingWTF/repo-standardizer/releases)
+[![GitHub issues](https://img.shields.io/github/issues/programmingWTF/repo-standardizer)](https://github.com/programmingWTF/repo-standardizer/issues)
+[![GitHub pull requests](https://img.shields.io/github/issues-pr/programmingWTF/repo-standardizer)](https://github.com/programmingWTF/repo-standardizer/pulls)
+[![GitHub stars](https://img.shields.io/github/stars/programmingWTF/repo-standardizer)](https://github.com/programmingWTF/repo-standardizer/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/programmingWTF/repo-standardizer)](https://github.com/programmingWTF/repo-standardizer/network)
+[![GitHub contributors](https://img.shields.io/github/contributors/programmingWTF/repo-standardizer)](https://github.com/programmingWTF/repo-standardizer/graphs/contributors)
 
 > **One command polishes any GitHub repo's surface — label taxonomy (emoji rating tiers), issue forms, PR template, CI, rulesets, docs. Repo meta & config only, no code logic touched.**
 >
@@ -42,10 +42,10 @@ Stop pasting the same wall of prompts every time you start a new project. This s
 
 ```bash
 # via the skills CLI (works with any agent)
-npx skills add programmingHLS/repo-standardizer
+npx skills add programmingWTF/repo-standardizer
 
 # or via OpenClaw
-openclaw skills install git:programmingHLS/repo-standardizer@main
+openclaw skills install git:programmingWTF/repo-standardizer@main
 ```
 
 Requires: `gh` CLI (authenticated), `git`, and `jq` + `python3` for label encoding.
@@ -55,7 +55,7 @@ Requires: `gh` CLI (authenticated), `git`, and `jq` + `python3` for label encodi
 Just ask your agent:
 
 ```text
-Standardize the repo programmingHLS/repo-standardizer
+Standardize the repo programmingWTF/repo-standardizer
 ```
 
 Or run modules selectively:
@@ -114,7 +114,7 @@ Protect the main branch with a ruleset requiring review
 ## 🤝 Contributing
 
 PRs welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for conventions.
-Found a bug? Use the [bug report form](https://github.com/programmingHLS/repo-standardizer/issues/new?template=bug.yml).
+Found a bug? Use the [bug report form](https://github.com/programmingWTF/repo-standardizer/issues/new?template=bug.yml).
 
 ## 📄 License
 

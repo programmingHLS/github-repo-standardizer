@@ -5,7 +5,7 @@ Cursor, Copilot, OpenClaw, etc.) working in this repository.
 
 ## Start
 
-- Repo: `https://github.com/programmingHLS/repo-standardizer`
+- Repo: `https://github.com/programmingWTF/repo-standardizer`
 - Replies: repo-root refs only: `SKILL.md:120`. No absolute paths, no `~/`.
 - This repo is a **skill**: `SKILL.md` is the product, `templates/`
   are its support files, `.github/workflows/release-skill.yml` ships it.

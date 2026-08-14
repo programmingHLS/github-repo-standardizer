@@ -3,12 +3,12 @@
 < [English](./README.md) | 简体中文 >
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![GitHub release](https://img.shields.io/github/v/release/programmingHLS/repo-standardizer)](https://github.com/programmingHLS/repo-standardizer/releases)
-[![GitHub issues](https://img.shields.io/github/issues/programmingHLS/repo-standardizer)](https://github.com/programmingHLS/repo-standardizer/issues)
-[![GitHub pull requests](https://img.shields.io/github/issues-pr/programmingHLS/repo-standardizer)](https://github.com/programmingHLS/repo-standardizer/pulls)
-[![GitHub stars](https://img.shields.io/github/stars/programmingHLS/repo-standardizer)](https://github.com/programmingHLS/repo-standardizer/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/programmingHLS/repo-standardizer)](https://github.com/programmingHLS/repo-standardizer/network)
-[![GitHub contributors](https://img.shields.io/github/contributors/programmingHLS/repo-standardizer)](https://github.com/programmingHLS/repo-standardizer/graphs/contributors)
+[![GitHub release](https://img.shields.io/github/v/release/programmingWTF/repo-standardizer)](https://github.com/programmingWTF/repo-standardizer/releases)
+[![GitHub issues](https://img.shields.io/github/issues/programmingWTF/repo-standardizer)](https://github.com/programmingWTF/repo-standardizer/issues)
+[![GitHub pull requests](https://img.shields.io/github/issues-pr/programmingWTF/repo-standardizer)](https://github.com/programmingWTF/repo-standardizer/pulls)
+[![GitHub stars](https://img.shields.io/github/stars/programmingWTF/repo-standardizer)](https://github.com/programmingWTF/repo-standardizer/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/programmingWTF/repo-standardizer)](https://github.com/programmingWTF/repo-standardizer/network)
+[![GitHub contributors](https://img.shields.io/github/contributors/programmingWTF/repo-standardizer)](https://github.com/programmingWTF/repo-standardizer/graphs/contributors)
 
 > **一个 Skill，一键把任何裸奔的 GitHub 仓库变成专业仓库——标签体系（段位强制 Emoji）、issue 表单、PR 模板、CI、规则集、文档，一条命令搞定。**
 >
@@ -43,10 +43,10 @@
 
 ```bash
 # 通过 skills CLI（任何 agent 都能用）
-npx skills add programmingHLS/repo-standardizer
+npx skills add programmingWTF/repo-standardizer
 
 # 或通过 OpenClaw
-openclaw skills install git:programmingHLS/repo-standardizer@main
+openclaw skills install git:programmingWTF/repo-standardizer@main
 ```
 
 依赖：`gh` CLI（已登录）、`git`、`jq` + `python3`（用于标签 URL 编码）。
@@ -56,7 +56,7 @@ openclaw skills install git:programmingHLS/repo-standardizer@main
 直接对你的 AI 说：
 
 ```text
-Standardize the repo programmingHLS/repo-standardizer
+Standardize the repo programmingWTF/repo-standardizer
 ```
 
 或单独跑某个模块：
@@ -114,7 +114,7 @@ Protect the main branch with a ruleset requiring review
 ## 🤝 贡献
 
 欢迎 PR！提交规范参见 [CONTRIBUTING.md](CONTRIBUTING.md)（`type(scope): description`）。
-发现 bug？用 [bug 表单](https://github.com/programmingHLS/repo-standardizer/issues/new?template=bug.yml) 报告。
+发现 bug？用 [bug 表单](https://github.com/programmingWTF/repo-standardizer/issues/new?template=bug.yml) 报告。
 
 ## 📄 许可证
 

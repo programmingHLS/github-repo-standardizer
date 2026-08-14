@@ -5,6 +5,19 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), versions follo
 
 ## [Unreleased]
 
+## [v0.2.7] - 2026-08-14
+
+### Changed
+
+- Surface-only positioning: SKILL.md description + intro, README (en + zh)
+  tagline and Safety-by-design now state clearly that the skill polishes a
+  repo's surface (labels, templates, CI configs, rulesets, docs) and never
+  touches code logic; GitHub repo description updated with the same wording
+- Repo moved from `programmingHLS` to `programmingWTF` (personal account, per
+  Guiyu's call — consistent with ClawHub publisher identity); all path
+  references updated (README badges/install/usage, issue-form config,
+  SECURITY.md, AGENTS.md); old URL redirects automatically
+
 ## [v0.2.6] - 2026-08-14
 
 ### Changed
