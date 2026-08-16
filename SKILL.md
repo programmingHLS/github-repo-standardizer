@@ -135,7 +135,7 @@ agent that auto-files PRs / auto-fixes issues.
   - Always redesign: pick a theme that fits the project (animals, gems,
     ranks, stars…) and the audience's language. Do not reuse any existing
     repo's rating labels as-is.
-- **分工小组 (teams)**: if the repo has an explicit division of labor
+- **Teams**: if the repo has an explicit division of labor
   (CODEOWNERS, CONTRIBUTING, a team list in docs) → add one `team: *` label
   per group (e.g. `team: frontend`, `team: algorithm`). No team list → skip.
 - **Project type** (library / app / coursework / org-infra) → decide which
@@ -241,7 +241,7 @@ from OpenClaw; trim to the repo's actual failure modes):
   → greens (never gray or red); `wontfix` → gray; `in progress` → blue.
   Everything else: pick colors that look good together and match the label's
   meaning loosely — but prefer variety over strict one-meaning-one-color.
-- **Emoji policy**: rating tiers (段位) are emoji-**mandatory** — every
+- **Emoji policy**: rating tiers are emoji-**mandatory** — every
   `rating:*` / `issue-rating:*` label needs a clear low→high emoji gradient
   (e.g. `rating: 🦞 diamond lobster`). Everywhere else, emoji is the agent's
   call: use icons where they aid scanning, omit them where they clutter.

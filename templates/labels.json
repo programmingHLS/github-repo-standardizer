@@ -15,8 +15,8 @@
   "status: merged": {"color": "2da44e", "description": "Already merged"},
   "status: wontfix": {"color": "d4d4d4", "description": "Will not be addressed"},
   "impact: security": {"color": "b60205", "description": "Security boundary, credentials, authz, sandbox, or sensitive-data risk"},
-  "impact: data-loss": {"color": "b60205", "description": "Can lose, corrupt, or silently drop user/session/config data"},
-  "impact: availability": {"color": "d93f0b", "description": "Crash, hang, restart loop, or process-level outage"},
+  "impact: data-loss": {"color": "d93f0b", "description": "Can lose, corrupt, or silently drop user/session/config data"},
+  "impact: availability": {"color": "fbca04", "description": "Crash, hang, restart loop, or process-level outage"},
   "dependencies": {"color": "0366d6", "description": "Pull requests that update a dependency"},
   "security": {"color": "ff0000", "description": "Security-related issues"}
 }

@@ -5,6 +5,25 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), versions follo
 
 ## [Unreleased]
 
+## [v0.2.8] - 2026-08-16
+
+### Fixed
+
+- CI templates: removed the npm-only `--if-present` flag from the Python
+  (`ruff check .` / `pytest`) and Rust (`cargo fmt --check` / `cargo clippy`)
+  workflows — those tools reject the flag, which broke CI for non-npm projects
+- `templates/CONTRIBUTING.md`: issue-label reference now matches the actual
+  taxonomy (`bug` / `enhancement` / `P0`–`P3`) instead of a non-existent
+  `type:*` / `priority:*` prefix
+- `templates/labels.json`: `impact: data-loss` and `impact: availability` no
+  longer reuse `impact: security`'s color — fixes the adjacent-duplicate that
+  the skill's own color rules forbid
+
+### Changed
+
+- SKILL.md / templates/LABELS.md: dropped stray Chinese glosses (段位 / 分工小组)
+  from the English docs
+
 ## [v0.2.7] - 2026-08-14
 
 ### Changed
