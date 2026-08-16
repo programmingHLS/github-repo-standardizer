@@ -1,7 +1,7 @@
 # Label Guide
 
 Every label in this repository, what it means, and how it ranks. Rating
-tiers (段位) always carry emoji prefixes with a low→high gradient; other
+tiers always carry emoji prefixes with a low→high gradient; other
 labels may or may not — per dimension, either all labels carry an emoji or
 none do, never mixed. Write labels in the repo's primary language.
 

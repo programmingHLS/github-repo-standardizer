@@ -20,7 +20,7 @@ guide so your contribution goes smoothly.
 ## Issue conventions
 
 - Use the issue forms: bug reports, feature requests, questions.
-- Label your issue with the matching `type:*` / `priority:*` label.
+- Label your issue with the matching `bug` / `enhancement` / `P0`–`P3` label.
 
 ## Commit style
 
