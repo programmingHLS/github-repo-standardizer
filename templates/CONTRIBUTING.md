@@ -8,7 +8,8 @@ guide so your contribution goes smoothly.
 1. Fork the repository.
 2. Create a feature branch: `git checkout -b feat/your-feature`.
 3. Make your changes and commit them with a clear message.
-4. Push and open a pull request against `main`.
+4. Push and open a pull request against the default branch (`main` for
+   most repos).
 
 ## Pull request checklist
 

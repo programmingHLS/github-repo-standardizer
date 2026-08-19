@@ -8,7 +8,7 @@
   "P0": {"color": "b60205", "description": "Emergency: data loss, security bypass, crash loop, or unusable core"},
   "P1": {"color": "d93f0b", "description": "High: blocks planned work, needs attention soon"},
   "P2": {"color": "fbca04", "description": "Medium: normal priority"},
-  "P3": {"color": "0e8a16", "description": "Low: nice to have"},
+  "P3": {"color": "1a7f37", "description": "Low: nice to have"},
   "status: blocked": {"color": "5319e7", "description": "Blocked by something else"},
   "status: in progress": {"color": "1d76db", "description": "Work is underway"},
   "status: ready to merge": {"color": "0e8a16", "description": "Approved and ready to merge — green means go"},

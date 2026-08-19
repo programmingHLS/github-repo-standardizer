@@ -4,7 +4,7 @@ description: Polish any GitHub repository's surface — labels (emoji rating tie
 metadata:
   openclaw:
     requires:
-      bins: [gh, git]
+      bins: [gh, git, jq, python3]
 ---
 
 # GitHub Repo Standardizer
@@ -174,7 +174,7 @@ all or none per dimension (baseline ships plain `P0`–`P3`):
 | `🔴 P0` | Emergency: data loss, security bypass, crash loop, unusable core | `b60205` |
 | `🟠 P1` | High: blocks planned work, needs attention soon | `d93f0b` |
 | `🟡 P2` | Medium: normal priority | `fbca04` |
-| `🟢 P3` | Low: nice to have | `0e8a16` |
+| `🟢 P3` | Low: nice to have | `1a7f37` |
 
 **Dimension menu** (write each label in the user's chosen language):
 
@@ -285,6 +285,12 @@ done
 Create `.github/ISSUE_TEMPLATE/` with `config.yml` plus one YAML form per
 template (bug / feature / question). Push via a commit:
 
+- **Replace placeholders** in `config.yml` (`OWNER/REPO` in the
+  Discussions / Security contact URLs) — see Template placeholders.
+- Write the forms in the user-chosen language (Preflight step 5): translate
+  form names, labels, descriptions, and placeholder text; `title:` prefix
+  and `labels:` values stay as-is (they must match the label taxonomy).
+
 ```bash
 mkdir -p .github/ISSUE_TEMPLATE
 cp templates/issue-form-*.yml templates/config.yml .github/ISSUE_TEMPLATE/
@@ -304,12 +310,19 @@ git add .github/PULL_REQUEST_TEMPLATE.md && git commit -m "chore: add PR templat
 ```
 
 - Write the template in the user-chosen language (Preflight step 5).
+  The PR template has no placeholders to replace.
 
 ### Module D — CI workflow
 
-Pick the workflow from the framework detection (templates/ci-*.yml). Write to
-`.github/workflows/ci.yml`, commit, push. Keep existing workflows; only add
-`ci.yml` if none exists.
+Pick the workflow from the framework detection (templates/ci-*.yml —
+they trigger on `$default-branch`, so they work for any default branch
+name). Write to `.github/workflows/ci.yml`, commit, push. Keep existing
+workflows; only add `ci.yml` if none exists.
+
+- Node projects: `ci-node.yml` installs dependencies lockfile-aware
+  (`npm ci` / `pnpm install --frozen-lockfile` / `yarn install
+  --frozen-lockfile`, with plain `npm install` as fallback) — no manual
+  adjustment needed for pnpm / yarn repos.
 
 - Note: pushing workflow files requires a token with the `workflow` scope; if
   the push is rejected with 403, tell the user their token lacks `workflow`.
@@ -375,27 +388,32 @@ README (ask about languages FIRST):
   - Keep structure, badges, and anchors parallel across language files.
 - `README.md`: if missing or bare, generate one from `templates/README.md`
   (badges, install, usage, modules table). Keep the user's existing content if
-  it is already substantive — only append a badges block.
+  it is already substantive — only append a badges block. **Replace
+  placeholders** (badge URLs, clone URL, owner credit) per Template
+  placeholders.
 - `CONTRIBUTING.md`, `SECURITY.md`, `CODE_OF_CONDUCT.md`: copy from
   templates if missing (write `CONTRIBUTING.md` in the user-chosen language
-  from Preflight step 5).
+  from Preflight step 5; **replace `OWNER/REPO`** in `SECURITY.md`'s
+  advisory link per Template placeholders).
 - `VISION.md`: optional direction doc (modeled on OpenClaw's VISION.md) —
   generate a short vision from `templates/VISION.md` (origin, guiding
   principles, current state, direction, contribution rules) if the user
-  wants one.
+  wants one (**replace `PROJECT_NAME`** per Template placeholders).
 - `THIRD_PARTY_NOTICES.md`: add when the project adapts third-party content
   (licenses, fonts, code of conduct) — list each source and its license.
 - `docs/ARCHITECTURE.md`: for non-trivial projects, generate a short
   architecture doc (structure, flow, constraints) from the audit.
 - `LICENSE`: ask the user which license (default MIT) before creating.
 - `CHANGELOG.md`: create from `templates/CHANGELOG.md` (Keep a Changelog
-  format) if missing; log notable changes per release.
+  format) if missing; log notable changes per release (**replace
+  `YYYY-MM-DD`** in the placeholder date line per Template placeholders).
 
 ### Module G — AI assistant guides (CLAUDE.md / AGENTS.md)
 
 - Add a `CLAUDE.md` (guidance for Claude Code) and an `AGENTS.md` (guidance
   for any AI coding agent) when missing — see `templates/CLAUDE.md` and
-  `templates/AGENTS.md`.
+  `templates/AGENTS.md` (**replace `OWNER/REPO`** and the i18n placeholder
+  per Template placeholders).
 - If they already exist, diff and fill gaps rather than overwrite.
 - Typical content, derived from the repo audit (Modules A–F):
   - Project: one-paragraph summary, status, stack.
@@ -418,6 +436,40 @@ gh api repos/OWNER/REPO/rulesets -q '.[] | {name:.name, enforcement:.enforcement
 ```
 
 Report a final table: `module | status (applied/skipped/failed) | note`.
+
+## Template placeholders (replace on copy)
+
+Templates stay generic — `OWNER/REPO`, `OWNER_USERNAME`, `PROJECT_NAME`,
+`YYYY-MM-DD` are placeholders the agent fills in when copying a template
+into the target repo. **Unreplaced placeholders ship broken links** (badges,
+clone URL, discussions, security advisory, CODEOWNERS handle) into the
+user's repo.
+
+| Placeholder | Replace with |
+|---|---|
+| `OWNER` | target repo owner login (user or org) |
+| `REPO` | target repo name |
+| `OWNER_USERNAME` | owner's default reviewer / team handle |
+| `PROJECT_NAME` | project display name |
+| `YYYY-MM-DD` | current date |
+
+Resolve the values once up front, then substitute in every copied file
+(`config.yml`, `README*.md`, `SECURITY.md`, `CODEOWNERS`, `AGENTS.md` /
+`CLAUDE.md`, `VISION.md`, …):
+
+```bash
+O=OWNER R=REPO N=PROJECT_NAME D=$(date +%F)
+sed -i "s|OWNER_USERNAME|$O|g; s|OWNER/REPO|$O/$R|g; s|PROJECT_NAME|$N|g; s|YYYY-MM-DD|$D|g" \
+  .github/ISSUE_TEMPLATE/config.yml README.md SECURITY.md .github/CODEOWNERS AGENTS.md
+```
+
+- Replace `OWNER_USERNAME` before `OWNER/REPO` — the former contains the
+  `OWNER` prefix, so order matters with naive `sed`.
+- Only `config.yml`, `README*.md`, `SECURITY.md`, `CODEOWNERS`, `AGENTS.md` /
+  `CLAUDE.md`, `VISION.md`, `CHANGELOG.md` carry placeholders; the issue
+  forms, PR template, CI workflows, and CoC are placeholder-free.
+- CI templates need no substitution, but **translate** their human-facing
+  text if the user chose a non-English language.
 
 ## Rules of thumb
 
