@@ -5,6 +5,17 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), versions follo
 
 ## [Unreleased]
 
+## [v1.0.1] - 2026-08-19
+
+### Changed
+
+- SKILL.md: removed the nested `metadata.openclaw` block — the agentskills
+  spec (enforced by awesome-copilot's vally linter) requires metadata values
+  to be strings; tool requirements (`gh`, `git`, `jq`, `python3`) are now
+  declared in the Preflight section instead
+- SKILL.md Templates list: qualified `README.md` / `README.zh.md` as
+  `templates/README.*` so file-reference linters resolve them correctly
+
 ## [v1.0.0] - 2026-08-19
 
 ### Added
