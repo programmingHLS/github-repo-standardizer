@@ -16,6 +16,8 @@
 
 Stop pasting the same wall of prompts every time you start a new project. This skill detects the current state of a repository and applies a professional baseline **idempotently**: run it on a fresh repo, or run it on an old repo to fill in what's missing. It never clobbers your content.
 
+![demo](docs/demo.gif)
+
 ---
 
 ## ✨ Features
@@ -100,7 +102,8 @@ Protect the main branch with a ruleset requiring review
 │   ├── README.md          # README skeleton (English)
 │   └── README.zh.md       # README skeleton (简体中文)
 ├── docs/                  # Project docs
-│   └── ARCHITECTURE.md    # Skill architecture
+│   ├── ARCHITECTURE.md    # Skill architecture
+│   └── demo.gif           # Terminal demo animation
 ├── AGENTS.md              # AI-agent guidance (root)
 ├── CLAUDE.md              # symlink → AGENTS.md
 ├── VISION.md              # Project vision & direction
