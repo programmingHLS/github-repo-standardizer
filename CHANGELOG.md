@@ -5,6 +5,40 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), versions follo
 
 ## [Unreleased]
 
+## [v1.0.0] - 2026-08-19
+
+### Added
+
+- SKILL.md: explicit template-placeholder substitution step — `OWNER/REPO`,
+  `OWNER_USERNAME`, `PROJECT_NAME`, `YYYY-MM-DD` are replaced with the
+  target repo's real values when templates are copied (badges, discussions,
+  security advisory, clone URLs no longer ship broken)
+- SKILL.md metadata: `requires` now lists `jq` + `python3` alongside
+  `gh` / `git` (they were already needed by Module A)
+- SKILL.md Module D: documents `$default-branch` triggers and lockfile-aware
+  dependency install for Node projects
+- SKILL.md Module B: issue forms now also follow the user's chosen language
+  (Preflight step 5)
+
+### Changed
+
+- CI templates: `push.branches: [main]` → `[$default-branch]` — workflows
+  now trigger on any default branch name (Node / Python / Go / Rust)
+- `ci-node.yml`: dependency install detects the lockfile (`npm ci` /
+  `pnpm install --frozen-lockfile` / `yarn install --frozen-lockfile` /
+  plain `npm install` fallback)
+- `ci-go.yml`: matrix updated to Go 1.25 / 1.26 (1.22 / 1.23 were EOL)
+- `templates/labels.json`: `P3` color `0e8a16` → `1a7f37` so it no longer
+  duplicates `status: ready to merge`'s color
+- `templates/CONTRIBUTING.md`: PR target wording no longer hardcodes `main`
+- VISION.md: current state reflects v1.0
+- Repo labels dogfooded to the v1 baseline: `P0`–`P3` and `impact:*` added
+
+### Removed
+
+- Legacy `priority: critical/high/medium/low` labels from this repo
+  (superseded by `P0`–`P3`)
+
 ## [v0.2.8] - 2026-08-16
 
 ### Fixed

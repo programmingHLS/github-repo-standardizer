@@ -23,8 +23,11 @@ was tedious. The skill exists so that "standardize this repo" is one sentence.
 
 ## Current state
 
-- v0.1.x: core modules (labels, issue forms, PR template, CI, rulesets,
-  docs, AI guides), bilingual README, automated release workflow.
+- v1.0: stable surface baseline — labels (`P0`–`P3`, `impact:*`, gated
+  Governance dimension), issue forms, PR template, CI (Node / Python / Go /
+  Rust, `$default-branch` aware), rulesets, docs, AI guides; explicit
+  template-placeholder substitution; dogfooded on this repo (labels in sync
+  with `templates/labels.json`).
 - Live skill + templates are the source of truth; releases ship the skill
   zip automatically from `v*` tags.
 
