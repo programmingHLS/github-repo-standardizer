@@ -18,6 +18,8 @@
 
 ![demo](docs/demo.gif)
 
+*演示用动画（preflight → 计划 → 执行 → 验证）——skill 运行在 AI agent 内，不是独立 CLI。*
+
 ---
 
 ## ✨ 功能

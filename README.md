@@ -18,6 +18,8 @@ Stop pasting the same wall of prompts every time you start a new project. This s
 
 ![demo](docs/demo.gif)
 
+*Illustrative animation of the workflow (preflight → dry-run plan → apply → verify) — the skill runs inside an AI agent, not as a standalone CLI.*
+
 ---
 
 ## ✨ Features
