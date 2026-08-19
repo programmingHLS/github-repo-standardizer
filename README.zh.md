@@ -113,6 +113,10 @@ Protect the main branch with a ruleset requiring review
 └── README.zh.md           # 简体中文
 ```
 
+## ✨ 案例展示
+
+被这个 Skill 标准化过的真实仓库——见 [SHOWCASE.md](SHOWCASE.md)。
+
 ## 🤝 贡献
 
 欢迎 PR！提交规范参见 [CONTRIBUTING.md](CONTRIBUTING.md)（`type(scope): description`）。

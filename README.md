@@ -114,6 +114,10 @@ Protect the main branch with a ruleset requiring review
 └── README.zh.md           # 简体中文
 ```
 
+## ✨ Showcase
+
+Real repositories standardized by this skill — see [SHOWCASE.md](SHOWCASE.md).
+
 ## 🤝 Contributing
 
 PRs welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for conventions.
